@@ -20,7 +20,11 @@ public class queryDatabase {
             ResultSet resultSet = statement.getResultSet();
 
             while(resultSet.next()){
-                result.add(resultSet.getInt(1));
+                result.add(resultSet.getInt("lightLevel"));
+                result.add(resultSet.getInt("moistureLevel"));
+                result.add(resultSet.getInt("carbonDLevel"));
+                result.add(resultSet.getInt("tVOCLevel"));
+                result.add(resultSet.getInt("rainLevel"));
             }
         } catch (SQLException e){
             e.printStackTrace();
