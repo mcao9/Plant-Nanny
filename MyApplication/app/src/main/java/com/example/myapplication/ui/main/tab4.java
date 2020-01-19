@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.myapplication.R;
 
@@ -67,7 +68,15 @@ public class tab4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab4, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_tab4, container, false);
+        String dummy;
+        int wow = ((GlobalClass) getActivity().getApplicationContext()).getLight();
+        dummy = "Light level is: " + wow;
+
+        TextView textView = (TextView) v.findViewById(R.id.textView3);
+        textView.setText(dummy);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

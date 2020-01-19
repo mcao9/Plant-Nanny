@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 /**
@@ -67,11 +68,23 @@ public class tab2 extends Fragment {
         }
     }
 
+    Button weather;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_tab2, container, false);
+        weather = v.findViewById(R.id.button);
+        weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.weather.com"));
+                startActivity(intent);
+            }
+        });
+        //MainActivity.AsyncTaskRunner fun = new MainActivity.AsyncTaskRunner();
+        String koala = "";
         return v;
         //return inflater.inflate(R.layout.fragment_tab2, container, false);
 

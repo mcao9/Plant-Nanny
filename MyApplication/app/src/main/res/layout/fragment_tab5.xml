@@ -29,7 +29,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="40dp"
-        android:text="THe purpose of our project was to create an app to manage plants and the "
+        android:text="The purpose of our project was to create an app to manage plants and to optimize the usage of water when caring for plants. By monitoring factors such as soil moisture, rain, and light, we can create the ideal growing environment for plants of all kinds. Our system keeps real-time tabs on your plants so that you can always have the peace of mind that your plants will be ok."
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

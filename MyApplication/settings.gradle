@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':postgresql-42.2.8'
 rootProject.name='My Application'
