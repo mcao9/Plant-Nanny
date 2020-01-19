@@ -19,9 +19,11 @@ public class connectDatabase{
                 System.out.println("Connected to the cloud database!");
             }
             updateDatabase ud = new updateDatabase(connection);
+            queryDatabase qd = new queryDatabase(connection);
             PlantStatSet ss = new PlantStatSet();
             ss.readPort();
-  
+            
+            System.out.println(qd.getSensorData());
             System.out.println(ud.insertSensorInfo(ss.getLight(), ss.getSoilMoist(), ss.getCO2(), ss.gettVoc(), ss.getRain()));
         } catch (SQLException | ClassNotFoundException e){
             System.out.println("Error while connection to the cloud database: " + e);

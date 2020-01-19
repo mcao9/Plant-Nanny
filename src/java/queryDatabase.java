@@ -1,10 +1,10 @@
 import java.sql.*;
 import java.util.*;
 
-public class updateDatabase {
+public class queryDatabase {
     private Connection connection;
 
-    public updateDatabase(Connection connection){
+    public queryDatabase(Connection connection){
         this.connection = connection;
     }
     public Connection getConnection(){
@@ -14,7 +14,7 @@ public class updateDatabase {
         List<Integer> result = new ArrayList<Integer>();
 
         try{
-            String query = "SELECT * FROM sensor WHERE loggedat = (SELECT max(loggedat) FROM sensor)";
+            String query = "SELECT lightLevel, moistureLevel, carbonDLevel, tVOCLevel, rainlevel FROM sensor WHERE loggedat = (SELECT max(loggedat) FROM sensor)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
