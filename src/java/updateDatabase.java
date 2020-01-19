@@ -12,22 +12,20 @@ public class updateDatabase {
     }
     public int insertSensorInfo(int light, int soilMoist, int CO2, int tVoc, int rain){
         int numOfRowsUpdated = 0;
-        try {
-            String query = "INSERT INTO sensor(lightLevel, moistureLevel, carbonDLevel, tVOCLevel, rainLevel) VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, light);
-            statement.setInt(2, soilMoist);
-            statement.setInt(3, CO2);
-            statement.setInt(4, tVoc);
-            statement.setInt(5, rain);
-
-            statement.execute();
+        while(numOfRowsUpdated != 60){
+            try {
+                String query = "INSERT INTO sensor VALUES (?, ?, ?, ?, ?)";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setInt(1, light);
+                statement.setInt(2, soilMoist);
+                statement.setInt(3, CO2);
+                statement.setInt(4, tVoc);
+                statement.setInt(5, rain);
     
-            numOfRowsUpdated = statement.getUpdateCount();
-
-        } catch (SQLException e){
-            e.printStackTrace();
+                numOfRowsUpdated++;
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
         }
-        return numOfRowsUpdated;
     }
 }

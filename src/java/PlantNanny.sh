@@ -5,7 +5,7 @@ javac connectDatabase.java
 
 while true; do
 	java connectDatabase
-	sleep 10m
+	sleep 1m
 done
 
 
