@@ -37,11 +37,11 @@ void setup() {
   digitalWrite(cameraDigOutput, HIGH);
 } 
 
-int soilAnaVal = 0;
-int rainAnaVal = 0;
-int C02Val = 0;
-int TVOCVal = 0;
-int lightAnaVal = 0;
+int soilAnaVal = 1;
+int rainAnaVal = 1;
+int C02Val = 1;
+int TVOCVal = 1;
+int lightAnaVal = 1;
 int pos = 0;
 int goOnceFlag = false;
 
