@@ -1,0 +1,12 @@
+DROP SCHEMA cruzhacks2020 CASCADE;
+CREATE SCHEMA cruzhacks2020;
+
+-- CREATING sensor table
+CREATE TABLE sensor(
+ID INTEGER,
+moistureLevel INTEGER,
+rainLevel INTEGER,
+lightLevel INTEGER,
+humidityLevel INTEGER,
+loggedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
