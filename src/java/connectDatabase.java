@@ -19,7 +19,7 @@ public class connectDatabase{
                 System.out.println("Connected to the cloud database!");
             }
             updateDatabase ud = new updateDatabase(connection);
-            queryDatabase qd = new queryDatabase(connection);
+            //queryDatabase qd = new queryDatabase(connection);
             PlantStatSet ss = new PlantStatSet();
             ss.readPort();
             
