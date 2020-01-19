@@ -7,7 +7,7 @@ public class connectDatabase{
         Connection connection = null;
         try{
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:35.224.80.243",
+            connection = DriverManager.getConnection("jdbc:postgresql://35.224.80.243/postgres",
                                                      "postgres", 
                                                      "nanny");
             if (connection != null){
@@ -19,7 +19,7 @@ public class connectDatabase{
         } finally {
             if (connection != null){
                 try{
-                    connection.close()
+                    connection.close();
                 } catch (SQLException e){
                     System.out.println("Failed to close connection to cloud database: " + e);
                     e.printStackTrace();
